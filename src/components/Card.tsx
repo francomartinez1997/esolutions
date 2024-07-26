@@ -12,7 +12,16 @@ interface CardProps {
 
 const CustomCard: React.FC<CardProps> = ({ name, birthYear, gender, height, onButtonClick }) => {
   return (
-    <Card elevation={3} >
+    <Card 
+      elevation={3} 
+      sx={{
+        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+        '&:hover': {
+          transform: 'scale(1.05)',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
+        }
+      }}
+    >
       <CardContent>
         <Typography variant="h5">
           {name}
